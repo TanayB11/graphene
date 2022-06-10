@@ -89,6 +89,7 @@ export default {
       if (e.key == ' ') {
         if (this.isTiming) {
           clearInterval(this.timer)
+          this.grabScramble()
         } else {
           this.timerIsPrimed = true
           this.time = '0.00'
