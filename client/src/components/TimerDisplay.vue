@@ -47,7 +47,7 @@ export default {
       if (e.key == ' ') {
         if (this.$store.getters.getIsTiming) {
           clearInterval(this.timer)
-          this.$store.commit('genScramble')
+          this.$store.dispatch('genScramble', '333')
         } else {
           this.$store.commit('updateTimerIsPrimed', true)
           this.time = '0.00'
