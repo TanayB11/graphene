@@ -48,6 +48,11 @@ export default {
         if (this.$store.getters.getIsTiming) {
           clearInterval(this.timer)
           this.$store.dispatch('genScramble', '333')
+          this.$store.dispatch('updateIndexedDb', {
+            puzzle: '333',
+            scramble: this.$store.getters.getScramble,
+            time: this.time,
+          })
         } else {
           this.$store.commit('updateTimerIsPrimed', true)
           this.time = '0.00'

@@ -2,8 +2,17 @@
   <div class="scramble-display">
     <div class="absolute bottom-0 w-full text-center">
       <h3
-        v-if="!$store.getters.getTimerIsPrimed && !$store.getters.getIsTiming"
-        class="w-2/3 p-10 mx-auto text-3xl"
+        :class="[
+          'w-2/3',
+          'p-10',
+          'mx-auto',
+          'text-3xl',
+          'transition-opacity',
+          'duration-200',
+          !$store.getters.getIsTiming && !$store.getters.getTimerIsPrimed
+            ? 'opacity-100'
+            : 'opacity-0',
+        ]"
       >
         {{ $store.state.scramble }}
       </h3>
